@@ -1,5 +1,7 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, useStaticQuery, graphql } from "gatsby";
+import favicon from "../images/icon.png";
 import {
   container,
   siteTitle,
@@ -22,6 +24,9 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <div className={container}>
+      <Helmet>
+        <link rel="icon" href={favicon} type="image/x-icon" />
+      </Helmet>
       <title>
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
